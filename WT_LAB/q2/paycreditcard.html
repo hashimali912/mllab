@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Payment</title>
+  <script>
+    function validate() {
+      let c = document.getElementById("c").value,
+          e = document.getElementById("e").value,
+          v = document.getElementById("v").value;
+      if (!c || !e || !v) return alert("All fields required."), false;
+      if (c.length !== 16 || isNaN(c)) return alert("Card number must be 16 digits."), false;
+      if (!/^(0[1-9]|1[0-2])\/\d{2}$/.test(e)) return alert("Invalid expiry (MM/YY)."), false;
+      if (v.length !== 3 || isNaN(v)) return alert("CVV must be 3 digits."), false;
+      alert("Payment successful!");
+      return true;
+    }
+  </script>
+</head>
+<body>
+  <h2>Credit Card Payment</h2>
+  <form onsubmit="return validate()">
+    Card Number:<br><input id="c"><br><br>
+    Expiry (MM/YY):<br><input id="e"><br><br>
+    CVV:<br><input id="v"><br><br>
+    <input type="submit" value="Pay">
+  </form>
+</body>
+</html>
