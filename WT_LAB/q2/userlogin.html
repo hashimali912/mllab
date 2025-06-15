@@ -1,34 +1,24 @@
-<!DOCTYPE html> 
-<html > 
-<head> 
-<title>User Login</title> 
-<script> 
-function validateLogin() { 
-const username = document.getElementById("username").value; 
-const password = document.getElementById("pass").value; 
-if (!username || !password) { 
-alert("Please fill in all fields."); 
-return false; 
-} 
-if (password.length < 8 || password.length > 20) { 
-alert("Password must be between 8 and 20 characters."); 
-return false; 
-} 
-// If all validations pass 
-alert("Login successful!"); 
-return true; 
-} 
-
-</script> 
-</head> 
-<body> 
-<h2>User Login</h2> 
-<form name="loginForm" onsubmit="return validateLogin()"> 
-<label for="username">Username:</label><br> 
-<input type="text" id="username" name="username" required><br><br> 
-<label for="pass">Password:</label><br> 
-<input type="password" id="pass" name="pass" required><br><br> 
-<input type="submit" value="Login"> 
-</form> 
-</body> 
-</html> 
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <script>
+    function validate() {
+      let u = document.getElementById("u").value,
+          p = document.getElementById("p").value;
+      if (!u || !p) return alert("All fields required."), false;
+      if (p.length < 8 || p.length > 20) return alert("Password must be 8–20 chars."), false;
+      alert("Login successful!");
+      return true;
+    }
+  </script>
+</head>
+<body>
+  <h2>Login</h2>
+  <form onsubmit="return validate()">
+    Username:<br><input id="u"><br><br>
+    Password:<br><input type="password" id="p"><br><br>
+    <input type="submit" value="Login">
+  </form>
+</body>
+</html>
