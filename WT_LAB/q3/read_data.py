@@ -6,8 +6,7 @@ def get_user_details(user_id):
         if user.get('id') == user_id: 
             name = user.find('name').text 
             email = user.find('email').text 
-            address = user.find('address').text 
-            return f"Name: {name}, Email: {email}, Address: {address}" 
+            return f"Name: {name}, Email: {email}" 
     return "User not found" 
 user_id = input("Enter a user ID: ") 
 print(get_user_details(user_id)) 
